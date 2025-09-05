@@ -15,7 +15,7 @@ async function getLarkAccessToken() {
   const url = 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal/';
   try {
     const response = await axios.post(url, {
-      app_id: LARK_APP_ID,
+      app_id: LARK_APP_ID,  
       app_secret: LARK_APP_SECRET
     });
     return response.data.app_access_token;
@@ -37,7 +37,7 @@ async function sendMessageToLark(text, chatId, accessToken) {
       })
     }, {
       headers: {
-        'Authorization': `Bearer ${accessToken}`,
+        'Authorization': `Bearer t-${accessToken}`,
         'Content-Type': 'application/json'
       }
     });
